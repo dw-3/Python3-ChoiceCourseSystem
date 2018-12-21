@@ -10,17 +10,17 @@ def auth(user_type):
                 if not admin.admin_info['name']:
                     admin.admin_login()
                 else:
-                    func(*args,**kwargs)
+                    return func(*args,**kwargs)
             elif user_type=='teacher' :
                 if not teacher.teacher_info['name']:
                     teacher.teacher_login()
                 else:
-                    func(*args,**kwargs)
+                    return func(*args,**kwargs)
             elif user_type=='student':
                 if not student.student_info['name']:
                     student.student_login()
                 else:
-                    func(*args,**kwargs)
+                    return func(*args,**kwargs)
         return wrapper
     return validation
 
